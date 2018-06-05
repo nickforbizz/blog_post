@@ -1,0 +1,117 @@
+body, html {
+	font-family: 'Lato', sans-serif;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	color: #777;
+}
+#body{margin-left: ;}
+#theNav{padding: 8px; transition: all 0.9s}
+#nav li>a{margin-right: 15px!important}
+#nav li{padding-top: 0px; font-family: 'Lato', sans-serif; font-family: 20px}
+#nav li:hover{ color: white!important}
+.recentBlog{  border: 1px solid grey; margin: 20px; max-width: -webkit-fill-available; border-radius: 5px; max-height: 330px; overflow-y: hidden;}
+.recentBlog .hover-bg{float: left; margin:  0px; text-align: center; border-radius: 5px;    height: 330px; overflow-y: hidden;}
+.hover-bg>button{margin:17% 0 0 0;}
+.blogDetails{ height: 260px; overflow-y: hidden;}
+.viewMore{width: 210px; margin-top: 5px; margin-bottom: 0}
+/*.recentBlog:hover{opacity: .7}*/
+#aboutDetails{background: #f9e4e4; padding: 20px 50px 50px 50px; border-radius: 5px;}
+#aboutDetails::first-letter{font-size: 30px; font-weight: 10px; font-family: 'segoe print'; color: green; margin-left: 30px}
+#imgBlog{width: 100%; height: -webkit-fill-available; z-index: -1; position: relative;}
+/*#welcomeHeader{display: none; position: absolute;  background: #00dcff; margin-left: 40%; top: 50%; padding: 20px; border-radius: 5px;  font-size: 22px; color: #0d182a;}*/
+header{background: url(../img/banner.jpg) no-repeat bottom right;	background-size: cover; width: 100%; 	position: relative;  color: #cfcfcf;	height: 100%;}
+#welcomeHeader {position: relative;  font-size: 22px;	padding-top: 130px;	padding-right: 0;	padding-left: 0;	padding-bottom: 210px; }
+.fixNav nav{position: fixed; top: 0px}
+#profileImg{padding-bottom: 10px}
+.navResized{padding: 0px !important}
+.hover-bg {
+	position: absolute;
+	text-align: center;
+	margin: 0 auto 0 auto !important;
+  left: -0.1px;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0.66);
+	padding: 7% 0 5% 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.hover-bg:hover { opacity: 1;	-webkit-backface-visibility: hidden;}
+hr{  height: 4px !important; width: 60px; text-align: center; position: relative; background: #0dad8d; border: 0; margin: 10px auto 30px;}
+h2 {
+    line-height: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    color: #555;
+}
+#contact i.fa {color:#0dad8d;    font-size: 16px; margin-bottom: 10px;}
+.footer{padding: 20px 0 20px 0; background: #554545;    width: 100%; color: white;}
+/* Social Section */
+#social-section {
+	padding: 30px 0;
+	background-color: #0dbf9b;
+	text-align: center;
+}
+#social-section .social ul li {
+	display: inline-block;
+	margin: 0 20px;
+}
+#social-section .social i.fa {
+	font-size: 24px;
+	padding: 4px 5px;
+	color: #fff;
+	transition: all 0.5s;
+}
+#social-section .social i.fa:hover {
+	color: #666;
+}
+.sendMsg{text-align: center;}
+.sendMsg button{text-align: center; border: 2px solid #0af2bc;}
+
+
+/* DashBoard*/
+.sidenav ul li{border-bottom: 1px solid #e7e7e7; padding: 10px 10px 10px 0; width: 100%}
+.sidenav {height: -webkit-fill-available;}
+#body-wrapper {
+    padding: 30px 15px 0 15px;
+    min-height: 600px;
+    background-color: #fff;
+}
+#navDashboard{margin: auto; width: 100%; }
+@media(min-width:768px){
+	#body-wrapper{
+		margin-left: 270px;
+		position: inherit;
+		padding: 20px;
+		margin-top: 55px;
+		border-left: 1px solid #e7e7e7;
+	}
+}
+@media(min-width:740px) {
+    .sidenav {
+        z-index: 1;
+        position: absolute;
+        width: 270px;
+        margin-top: 0px;
+    }
+#side-menu li>a>i {margin-right: 15px}
+#chartsNotify{ background: #337ab7;
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 100px;}
+#inbox{padding-left: 10px}
+.navbar-top-links li{display: inline-block !important;}
+.navbar-top-links li>span{padding: 10px}
+.headingPosts>span{background: pink; padding: 10px}
+.bottomEdition span{padding: 20px;  font-size:20px; cursor: pointer; border-radius: 5px; transition :all 0.9s;}
+.bottomEdition span:hover{background: grey; color: white}
+#myModalLabel{text-transform: capitalize;}
+#mceu_44{display: none !important}
+#postimg>input[name=postImg]{ margin: 0 0 20px 20px;}
+.CommentLikeIcon{ margin-left: 20px; background: #0474ab;}
+.CommentLikeIcon:hover{ color: red; cursor: pointer;}
+.CommentLikeIconText{cursor: pointer;}
+.form-comment{display: none;}
+.theTitle {list-style-type: none;}
