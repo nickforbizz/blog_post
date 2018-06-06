@@ -1,7 +1,9 @@
 <?php
 require 'conn.php';
 print_r($_POST);
-// print_r($_FILES);
+print_r($_FILES);
+
+echo "string";
 
 //  ***********  Posting Images ********************* //
 
@@ -11,7 +13,8 @@ if (isset($_POST['imgtopostTitle']) ){
 
 	if (!empty($_FILES['imgtopost']) ) {
 
-		$location = "imageUploads/";
+		$location = "./../imageUploads/";
+		$locationDB = "imageUploads/";
 		$file_ext = strtolower(end(explode('.', $_FILES['imgtopost']['name']) ));
 		$upload_name =$_FILES['imgtopost']['name'];
 		$target = $upload_name;
@@ -56,12 +59,32 @@ if (isset($_POST['imgtopostTitle']) ){
 				 else if(move_uploaded_file($file_tmp,$location.$time)){
 
 
-					 $uploadnamex2=$location.$time;
+					 $uploadnamex2=$locationDB.$time;
 					 //store the filename and about to the database
 
 							 $query = $conn->query("INSERT INTO `images` (link, name) VALUES ('$uploadnamex2', '$name')") or die($db_error);
-								 echo "some sos";
-								//  header("Location: images.php");
+
+							 // LOADING IMAGES DIV
+								 echo "<div class='' style='display: inline-block;
+																		   bottom: 0;
+																			 margin-left: 30%;
+																		 border-radius: 5px;
+																		 margin-top: 6%;
+																		 background-color: #09f5a6;'>
+								 					<div class='panel-group'>
+														<div style='padding: 15px; font-size: 25px; text-align: center;'>Your image is being uploaded</div>
+														<div class='panel panel-content'>
+																<img src='./../../img/giphy-downsized.gif' width='400' height='400'/>
+														</div>
+													</div>
+
+								 			</div>";
+
+								//  redirecting
+								// sleep php process
+										// sleep(5);
+										// // redirect
+										// header("location: ./../pages/pictures.html");
 
 				// Downloading file
 					}
@@ -75,7 +98,7 @@ if (isset($_POST['imgtopostTitle']) ){
 		echo "Nothing To Post".'<br>';
 	}
 } else {
-	return false;
+	echo "Nothing";
 }
 
 //  ***********  End of Posting Images ********************* //

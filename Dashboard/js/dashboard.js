@@ -5,15 +5,15 @@ $(window).load(function () {
     var charterVar, ul, i, li, a;
     charterVar = document.querySelector("#sCharter").value;
     // console.log(Title);
-    ul = document.getElementById("#theTitle");
-    li = ul.getElementsByTagName("li");
-
-    for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      if (a.innerHTML.toUpperCase().indexOf(Title) > -1 ) {
-        alert(li[i]);
-      }
-    }
+    // ul = document.getElementById("#theTitle");
+    // li = ul.getElementsByTagName("li");
+    //
+    // for (i = 0; i < li.length; i++) {
+    //   a = li[i].getElementsByTagName("a")[0];
+    //   if (a.innerHTML.toUpperCase().indexOf(Title) > -1 ) {
+    //     alert(li[i]);
+    //   }
+    // }
   }
   // ******************* End of function to search Blogs ***********************//
 
@@ -65,18 +65,28 @@ $(document).ready(function () {
 //     ++++++++++++++++++++++ Pictures Html +++++++++++++++++++++++++
 $('#postimg').submit(function (e) {
   e.preventDefault();
+  // var form = ('#postimg')[0];
   formdata1 = new FormData();
   formdata1.append("link",$("#imglink").val());
   formdata1.append("name",$("#imgname").val());
+
+  // $.post("./../php/pictures.php", {
+  //   formdata1
+  // }, function (data, status) {
+  //   $("#jun").html(data);
+  // })
+  console.log(formdata1);
   $.ajax({
-    url: '../php/pictures.php',
+    url: './../php/pictures.php',
     method: 'post',
+    dataType: 'iframe json',
+    fileInputs: $('input[type="file"]'),
+    data: formdata1,
     processData : false,
     contentType : false,
-    data: formdata1,
     success: function(data){
       console.log(data);
-       alert("Data Posted.");
+       alert();
       $('#postimg')[0].reset();
     },error: function(data){console.log(data);}
   });
